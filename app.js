@@ -29,7 +29,8 @@ async function fetchNews() {
   const params = new URLSearchParams({ country, category, pageSize, page });
   if (!PROXY_URL) params.set('apiKey', NEWSAPI_KEY);
 
-  const url = PROXY_URL ? `${PROXY_URL}?${params}` : `https://newsapi.org/v2/top-headlines?${params}`;
+  const url = PROXY_URL ? `${PROXY_URL}?${params}` :const url = `https://newsapi.org/v2/top-headlines?${params}`;
+;
 
   try {
     const res = await fetch(url);
@@ -109,3 +110,4 @@ countryEl.addEventListener('change', () => { page = 1; pageNumEl.textContent = p
 categoryEl.addEventListener('change', () => { page = 1; pageNumEl.textContent = page; fetchNews(); });
 
 fetchNews();
+
